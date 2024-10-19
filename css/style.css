@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 32px;
+    color: #035A7A;
+    font-weight: 600; 
+}
+p{
+    color: #313239;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+h3{
+    color: #313239;
+    font-family: "Roboto Flex", sans-serif;
+    text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+}
+
+ul{
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+/* ------------------HEADER-------------------- */
+
+.navbar{
+    background-color: #2BC7FF;
+    padding: 50px;
+}
+.navbar a, .navbar-toggler, .navbar-toggler-icon{
+    color: #035A7A;
+}
+
+.nav-link {
+    color: #035A7A;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    margin-left: 30px;
+    transition: 0.1s; 
+}
+.nav-link:hover {
+    transform: scale(1.1);
+    color: #035A7A;
+}
+.active {
+    color: #062d3b !important;
+    font-weight: 600; 
+}
+
+
+/* ---------FOOTER-------------- */
+footer{
+    background-color: #035A7A;
+    color: #e5f7fd;
+    height: 100px;
+    padding: 50px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+footer p{
+    color: #D4F4FF;
+    font-size: 12px;
+}
+
+footer ul{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+footer ul li a{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+footer div a{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ----------------INICIO---------------- */
+
+.datos{
+    padding: 50px 100px 0px 100px;
+
+}
+
+.datos form{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 150px;
+    gap: 30px;
+}
+.datos form .campo-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    width: 100%;
+    height: 100%;
+}
+.datos form .campo-form label{
+    color: #313239;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.datos form .campo-form input{
+    /* display: block; */
+    width: 100%;
+    background-color: #D4F4FF;
+    border: 0px ;
+    padding: 10px;
+    border-radius: 5px;
+}
+.datos form .campo-form .input-error{
+    border: solid 1px red;
+    border-radius: 10px;
+}
+.datos form .campo-form input::placeholder{
+    color: #868f92;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 12px;
+}
+.datos form .campo-form p{
+    color: #313239;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 12px;
+}
+.datos form .campo-form select{
+    display: block;
+    width: 100%;
+    background-color: #D4F4FF;
+    border: 0px ;
+    padding: 10px;
+    border-radius: 5px;
+    color: #313239;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 13px;
+}
+.datos form .campo-form select option{
+    border: 0px;
+    background-color: #e5f7fd;
+}
+.datos form .enviar input {
+    background-color: #035A7A;
+    height: 40px;
+    border: 0px;
+    width: 70%;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #e5f7fd;
+    text-align: center;
+    
+}
+.datos form .enviar {
+    grid-column: 3/3;
+    text-align: right;
+}
+
+.resultados{
+    padding: 60px 100px;
+}
+.resultados .ventana-agregada{
+    padding: 60px 40px;
+    border-bottom: 2px solid #035A7A ;
+}
+.resultados .ventana-agregada .caracteristicas-ventana-agregada{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px;
+    flex-wrap: wrap;
+}
+.resultados .ventana-agregada .caracteristicas-ventana-agregada p{
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+.resultados .ventana-agregada .Modena p{
+    color: #997025;
+}
+.resultados .ventana-agregada .Modena .infoLinea {
+    background-color: #997025;
+    color: #ffffff;
+}
+.resultados .ventana-agregada .A30 p{
+    color: #4b7c70;
+}
+.resultados .ventana-agregada .A30 .infoLinea {
+    background-color: #4b7c70;
+    color: #ffffff;
+}
+.resultados .ventana-agregada .Prime p{
+    color: #886c99;
+}
+.resultados .ventana-agregada .Prime .infoLinea {
+    background-color: #886c99;
+    color: #ffffff;
+}
+.resultados .ventana-agregada .Jumbo p{
+    color: #b46087;
+}
+.resultados .ventana-agregada .Jumbo .infoLinea {
+    background-color: #b46087;
+    color: #ffffff;
+}
+
+
+.none{
+    display: none;
+}
+/* -----------------mediaqueries inicio--------------- */
+@media screen {
+    
+}
+
+
+/* ---------------------- sobre el proyecto ------------------- */
+
+.sobre-proyecto{
+    padding: 60px 100px;
+}
+.sobre-proyecto h2{
+    margin-bottom: 40px;
+}
+.sobre-proyecto p{
+    margin-bottom: 10px;
+}
+.sobre-proyecto p em{
+    margin-bottom: 10px;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 600 ;
+    font-style: normal;
+}
+
+/* ---------------------------lineas ---------------- */
+
+#linea-contenedor{
+    padding: 60px 100px;
+}
+#linea-contenedor .descripcion-contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#linea-contenedor .descripcion-contenedor img{
+    width: 40%;
+}
+
+
+#linea-contenedor .descripcion-contenedor div a{
+    background-color: #035A7A;
+    color: #e5f7fd;
+    padding: 10px;
+    border-radius: 5px;
+}
+#linea-contenedor .descripcion-contenedor div p{
+    margin-bottom: 40px;
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "titulo": "Modena",
+        "descripcion": "Es una línea de mediana prestación. Preferiblemente se realizan ventanas chicas y medianas. Se pueden realizar ventanas corredizas y de abrir",
+        "material": "Aluminio",
+        "id":"Modena",
+        "img": "../img/modena.jpg"
+    },
+    {
+        "titulo": "A30",
+        "descripcion": "Es una línea de aluminio que se destaca por su resistencia estructural, permitiendo aberturas de gran tamaño y exigencias. Se pueden realizar ventanas corredizas y de abrir",
+        "material": "Aluminio",
+        "id": "A30",
+        "img": "../img/a30.jpg"
+    },
+    {
+        "titulo": "Prime",
+        "descripcion": "Es una línea apta para sistemas corredizos hasta 2,3 mts. de altura con la posibilidad de realizarlos de 2,3,4 o 6 hojas móviles. Permite la instalación de vidrios simples y dobles hasta 24mm de espesor.",
+        "material": "PVC",
+        "id": "Prime",
+        "img": "../img/prime.png"
+    },
+    {
+        "titulo": "Jumbo",
+        "descripcion": "Es una línea que se destaca por su óptima funcionalidad y prestación. Se pueden utilizar en sistemas corredizos hasta 3 mts de altura y 6 hojas móviles. Permite colocar vidrios simples y dobles  hasta 34 mm de espesor.",
+        "material": "PVC",
+        "id": "Jumbo",
+        "img":"../img/jumbo.png"
+    }
+]
