@@ -56,25 +56,25 @@ const ruedasJumbo = [ruedaSimpleJumbo, ruedaDobleJumbo];
 
 //! Función de asignación genérica
 function asignarRueda(ventanas, linea, ruedas, pesoAluminioAlto, pesoAluminioAncho) {
-    let ventanasLinea = ventanas.filter((ventana) => ventana.linea === linea);
+    let ventanasLinea = ventanas.filter((ventana) => ventana?.linea === linea);
     ventanasLinea.forEach(objeto => {
-        let anchoHoja = objeto.anchoVentana / objeto.cantidadHojas;
-        let pesoDelVidrioEnHoja = anchoHoja * objeto.altoVentana * pesoDelVidrioConstante * objeto.espesorVidrio;
+        let anchoHoja = objeto?.anchoVentana / objeto?.cantidadHojas;
+        let pesoDelVidrioEnHoja = anchoHoja * objeto?.altoVentana * pesoDelVidrioConstante * objeto.espesorVidrio;
         let pesoHoja = (anchoHoja * pesoAluminioAncho) + (objeto.altoVentana * pesoAluminioAlto) + pesoDelVidrioEnHoja;
         let div = document.createElement("div");
         div.classList.add("ventana-agregada");
         div.innerHTML = `
                 <h3>${objeto.obra}</h3>
                 <div class="caracteristicas-ventana-agregada  ${linea} "> 
-                <a href="./pages/linea.html?id=${objeto.linea}"><p class="infoLinea">${objeto.linea}</p></a>
-                <p>${objeto.anchoVentana} mts X ${objeto.altoVentana} mts</p>
-                <p>${objeto.cantidadHojas} hojas</p>
-                <p>${objeto.espesorVidrio} mm de espesor de vidrio</p>
+                <a href="./pages/linea.html?id=${objeto?.linea}"><p class="infoLinea">${objeto?.linea}</p></a>
+                <p>${objeto?.anchoVentana} mts X ${objeto?.altoVentana} mts</p>
+                <p>${objeto?.cantidadHojas} hojas</p>
+                <p>${objeto?.espesorVidrio} mm de espesor de vidrio</p>
                 </div>
                 <p> Cada hoja tiene un peso de ${pesoHoja.toFixed(2)} kg.</p>
             `;
         // Buscar la rueda adecuada
-        const ruedaAdecuada = ruedas.find(rueda => pesoHoja < rueda.peso);
+        const ruedaAdecuada = ruedas.find(rueda => pesoHoja < rueda?.peso);
 
         if (ruedaAdecuada) {
             let parrafo = ruedaAdecuada.seleccionada();
@@ -159,31 +159,6 @@ function cargarVentanasHoy() {
     ventanas = JSON.parse(localStorage.getItem("ventanas-calculadas")) || [];
     mostrarVentanasHoy();
 }
-
-// alert para informacion de cada linea
-
-/* fetch("../lineas.json")
-    .then(resp => resp.json())
-    .then(data => {
-        const parrafoLinea = document.querySelectorAll(".infoLinea");
-        lineaAlert(data, parrafoLinea);
-    })
-
-function lineaAlert(data, id) {
-    if (id.length =! 0) {
-        id.forEach(objeto => {
-            objeto.addEventListener("click", () => {
-                let texto = objeto.innerHTML;
-                let linea = data.find((prod) => prod.id === texto);
-                Swal.fire({
-                    title: `${linea.titulo}`,
-                    text: `${linea.descripcion}`,
-                });
-            })
-        })
-    }
-}  */
-
 
 cargarVentanasHoy();
 datos();

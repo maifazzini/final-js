@@ -28,6 +28,13 @@ ul{
     margin-bottom: 0;
     padding-left: 0;
 }
+input{
+    line-height: normal;
+}
+input[type="number" i] {
+    padding-block: 0px;
+    padding-inline: 0px;
+}
 
 /* ------------------HEADER-------------------- */
 
@@ -102,14 +109,10 @@ footer div a{
 .datos form{
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: 150px;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 .datos form .campo-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
     width: 100%;
     height: 100%;
 }
@@ -120,7 +123,6 @@ footer div a{
     margin-bottom: 15px;
 }
 .datos form .campo-form input{
-    /* display: block; */
     width: 100%;
     background-color: #D4F4FF;
     border: 0px ;
@@ -142,7 +144,6 @@ footer div a{
     font-size: 12px;
 }
 .datos form .campo-form select{
-    display: block;
     width: 100%;
     background-color: #D4F4FF;
     border: 0px ;
@@ -150,7 +151,6 @@ footer div a{
     border-radius: 5px;
     color: #313239;
     font-family: "Roboto Flex", sans-serif;
-    font-size: 13px;
 }
 .datos form .campo-form select option{
     border: 0px;
@@ -228,7 +228,30 @@ footer div a{
     display: none;
 }
 /* -----------------mediaqueries inicio--------------- */
-@media screen {
+@media screen and (max-width: 1035px ) {
+    .datos form{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .datos form .enviar {
+        grid-column: 2/2;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 830px ) {
+    .datos form{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .datos form .enviar {
+        grid-column: 1/1;
+    }
+    h2{
+        font-family: "Roboto Flex", sans-serif;
+        font-size: 28px;
+    }
+    p{
+        font-family: "Roboto Flex", sans-serif;
+        font-size: 18px;
+    }
     
 }
 

@@ -36,41 +36,42 @@
             <p>Te vamos a pedir algunos datos de tu ventana corrediza para hacer los cálculos necesarios.</p>
             <form action=" " id="form-analizador">
                 
-                    <div  class="campo-form">
-                        <label for="anchoVentana">Ancho de ventana total en mts *</label>
-                        <input type="number"  class= "campo" name="anchoVentana" id="anchoVentana" placeholder="Ejemplo: 3.2" step="any" max="100" required>
-                    </div>
-                    <div class="campo-form">
-                        <label for="altoVentana">Alto de ventana total en mts *</label>
-                        <input type="number"  class= "campo" name="altoVentana" id="altoVentana" placeholder="Ejemplo: 2.6" step="any" max="100" required>
-                    </div>
-                    <div class="campo-form">
-                        <label for="cantidadHojas">Cantidad de hojas *</label>
-                        <input type="number"  class= "campo" name="cantidadHojas" id="cantidadHojas" placeholder="Ejemplo: 3" min="2" max="6" required>
-                        <p>Mínimo 2 hojas y máximo 6 hojas</p>
-                    </div>
-                
-                    <div class="campo-form">
-                        <label for="espesorVidrio">Espesor del vidrio en mm *</label>
-                        <input type="number" class= "campo"  name="espesorVidrio" id="espesorVidrio" placeholder="Ejemplo: Si es 3+3/9/4 ingresar 10" max="25" required>
-                        <p>Tene en cuenta que si es DVH el espesor de la camara no se cuenta</p>
-                    </div>
-
-                    <div class="campo-form">
-                        <label for="linea">Linea *</label>
-                        <select name="lineas" id="lineas">
-                            <option value="Modena"> Modena </option>
-                            <option value="A30"> A30 </option>
-                            <option value="Prime"> Prime </option>
-                            <option value="Jumbo"> Jumbo </option>
-                        </select>
-                    </div>
-                    <div class="campo-form">
-                        <label for="obra">Nombre de la obra</label>
-                        <input type="text"  class= "campo" name="obra" id="obra" placeholder="Ejemplo: San Simon lote 1">
-                    </div>
-                
-                <div class= "enviar"><input type="submit" id="enviar"  value="Enviar"></div>
+                    
+                        <div  class="campo-form anchoVentana">
+                            <label for="anchoVentana">Ancho de ventana total en mts *</label>
+                            <input type="number"  class= "campo" name="anchoVentana" id="anchoVentana" placeholder="Ejemplo: 3.2" step="any" max="100" required>
+                        </div>
+                        <div class="campo-form altoVentana">
+                            <label for="altoVentana">Alto de ventana total en mts *</label>
+                            <input type="number"  class= "campo" name="altoVentana" id="altoVentana" placeholder="Ejemplo: 2.6" step="any" max="100" required>
+                        </div>
+                        <div class="campo-form cantidadHojas">
+                            <label for="cantidadHojas">Cantidad de hojas *</label>
+                            <input type="number"  class= "campo" name="cantidadHojas" id="cantidadHojas" placeholder="Ejemplo: 3" min="2" max="6" required>
+                            <p>Mínimo 2 hojas y máximo 6 hojas</p>
+                        </div>
+                    
+                        <div class="campo-form espesorVidrio">
+                            <label for="espesorVidrio">Espesor del vidrio en mm *</label>
+                            <input type="number" class= "campo"  name="espesorVidrio" id="espesorVidrio" placeholder="Ejemplo: Si es 3+3/9/4 ingresar 10" max="25" required>
+                            <p>Tene en cuenta que si es DVH el espesor de la camara no se cuenta</p>
+                        </div>
+                        <div class="campo-form linea">
+                            <label for="linea">Linea *</label>
+                            <select name="lineas" id="lineas">
+                                <option value="Modena"> Modena </option>
+                                <option value="A30"> A30 </option>
+                                <option value="Prime"> Prime </option>
+                                <option value="Jumbo"> Jumbo </option>
+                            </select>
+                        </div>
+                        <div class="campo-form obra">
+                            <label for="obra">Nombre de la obra</label>
+                            <input type="text"  class= "campo" name="obra" id="obra" placeholder="Ejemplo: San Simon lote 1">
+                        </div>
+                        
+                        <div class= "enviar"><input type="submit" id="enviar"  value="Enviar"></div>
+                    
             </form>
             <div>
                 <p id="error"></p>
