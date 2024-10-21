@@ -33,7 +33,7 @@ class Ruedas {
     }
     seleccionada() {
         let ruedatexto = document.createElement("p");
-        ruedatexto.innerText = `Debes colocar ${this.nombre} su código es ${this.codigo} y soporta ${this.peso} kg `;
+        ruedatexto.innerText = `Debes colocar ${this?.nombre} su código es ${this?.codigo} y soporta ${this?.peso} kg `;
         return ruedatexto
     }
 }
@@ -56,20 +56,20 @@ const ruedasJumbo = [ruedaSimpleJumbo, ruedaDobleJumbo];
 
 //! Función de asignación genérica
 function asignarRueda(ventanas, linea, ruedas, pesoAluminioAlto, pesoAluminioAncho) {
-    let ventanasLinea = ventanas.filter((ventana) => ventana?.linea === linea);
+    let ventanasLinea = ventanas.filter((ventana) => ventana.linea === linea);
     ventanasLinea.forEach(objeto => {
         let anchoHoja = objeto?.anchoVentana / objeto?.cantidadHojas;
-        let pesoDelVidrioEnHoja = anchoHoja * objeto?.altoVentana * pesoDelVidrioConstante * objeto.espesorVidrio;
-        let pesoHoja = (anchoHoja * pesoAluminioAncho) + (objeto.altoVentana * pesoAluminioAlto) + pesoDelVidrioEnHoja;
+        let pesoDelVidrioEnHoja = anchoHoja * objeto?.altoVentana * pesoDelVidrioConstante * objeto?.espesorVidrio;
+        let pesoHoja = (anchoHoja * pesoAluminioAncho) + (objeto?.altoVentana * pesoAluminioAlto) + pesoDelVidrioEnHoja;
         let div = document.createElement("div");
         div.classList.add("ventana-agregada");
         div.innerHTML = `
                 <h3>${objeto.obra}</h3>
                 <div class="caracteristicas-ventana-agregada  ${linea} "> 
                 <a href="./pages/linea.html?id=${objeto?.linea}"><p class="infoLinea">${objeto?.linea}</p></a>
-                <p>${objeto?.anchoVentana} mts X ${objeto?.altoVentana} mts</p>
-                <p>${objeto?.cantidadHojas} hojas</p>
-                <p>${objeto?.espesorVidrio} mm de espesor de vidrio</p>
+                <p>${objeto?.anchoVentana || "Error al ingresar ancho"} mts X ${objeto?.altoVentana || "Error al ingresar alto"} mts</p>
+                <p>${objeto?.cantidadHojas || "Error al ingresar cantidad de hojas"} hojas</p>
+                <p>${objeto?.espesorVidrio || "Error al ingresar espesor del vidrio"} mm de espesor de vidrio</p>
                 </div>
                 <p> Cada hoja tiene un peso de ${pesoHoja.toFixed(2)} kg.</p>
             `;
@@ -93,35 +93,34 @@ function asignarRueda(ventanas, linea, ruedas, pesoAluminioAlto, pesoAluminioAnc
 let ventanas = JSON.parse(localStorage.getItem("ventanas-calculadas")) || [];
 
 function datos() {
-    formulario.addEventListener("submit", (e) => {
-        e.preventDefault();
-            Toastify({
-                text: "Se agregó correctamente la ventana",
-                className: "tostadita",
-                gravity: "bottom",
-                position: "left",
-                duration: 2000,
-                style: {
-                    background: "#035A7A",
-                }
-            }).showToast();
-            const fechaActual = new Date().toLocaleDateString("es-AR");
-            ventanas.push({
-                anchoVentana: parseFloat(anchoVentana.value),
-                altoVentana: parseFloat(altoVentana.value),
-                cantidadHojas: parseFloat(cantidadHojas.value),
-                espesorVidrio: parseFloat(espesorVidrio.value),
-                linea: lineas.value,
-                obra: obra.value,
-                fecha: fechaActual
-            });
-            formulario.reset();
-            localStorage.setItem("ventanas-calculadas", JSON.stringify(ventanas));
-            mostrarVentanasHoy();
-        }
 
-    );
+    Toastify({
+        text: "Se agregó correctamente la ventana",
+        className: "tostadita",
+        gravity: "bottom",
+        position: "left",
+        duration: 2000,
+        style: {
+            background: "#035A7A",
+        }
+    }).showToast();
+    const fechaActual = new Date().toLocaleDateString("es-AR");
+    ventanas.push({
+        anchoVentana: parseFloat(anchoVentana?.value),
+        altoVentana: parseFloat(altoVentana?.value),
+        cantidadHojas: parseFloat(cantidadHojas?.value),
+        espesorVidrio: parseFloat(espesorVidrio?.value),
+        linea: lineas?.value,
+        obra: obra?.value,
+        fecha: fechaActual
+    });
+    formulario.reset();
+    localStorage.setItem("ventanas-calculadas", JSON.stringify(ventanas));
+    mostrarVentanasHoy();
 }
+
+
+
 
 
 
@@ -160,7 +159,65 @@ function cargarVentanasHoy() {
     mostrarVentanasHoy();
 }
 
+// funcion para estar seguro de que no quiere ingresar obra
+function alertObra() {
+    let valordeobra = obra.value ? true : false;
+    console.log(valordeobra)
+    for (valordeobra; valordeobra == false; valordeobra) {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success aceptar-alert",
+                cancelButton: "btn btn-danger cancelar-alert"
+            },
+            buttonsStyling: false
+        });
+        swalWithBootstrapButtons.fire({
+            title: "¿Estas seguro que no queres agregar el nombre de la obra?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Si",
+            cancelButtonText: "No, agregarlo",
+            color: "#035A7A",
+            background: "##e5f7fd"
+
+        }
+        ).then((result) => {
+            if (result.isConfirmed) {
+                valordeobra = true;
+                swalWithBootstrapButtons.fire({
+                    title: "Lo agregamos sin nombre de la obra",
+                    icon: "success",
+                    color: "#035A7A",
+                    background: "#e5f7fd"
+                });
+                datos();
+            } else if (
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                valordeobra = true;
+                swalWithBootstrapButtons.fire({
+                    title: "Tranki, todavia lo podes agregar!",
+                    color: "#035A7A",
+                    background: "#e5f7fd"
+                });
+            }
+        });
+        valordeobra = true;
+    }
+
+}
+function validaciondeobras() {
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valordeobra = obra.value || "";
+        if (valordeobra == "") {
+            alertObra();
+        } else {
+            datos();
+        }
+    })
+}
 cargarVentanasHoy();
-datos();
+validaciondeobras()
 
 

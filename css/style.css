@@ -98,6 +98,45 @@ footer div a{
     text-transform: uppercase;
     font-weight: 600;
 }
+/* -----------------mediaqueries footer--------------- */
+@media screen and (max-width: 880px ){
+    footer{
+
+        padding: 40px 60px;
+    }
+}
+@media screen and (max-width: 770px ){
+    footer{
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    gap: 15px;
+    height: auto;
+    }
+
+}
+@media screen and (max-width: 630px ){
+    footer ul{
+        width: 100%;}
+        footer ul li a{
+            font-size: 16px;
+        }
+
+}
+@media screen and (max-width: 400px ){
+    footer ul{
+        flex-direction: column ;
+        flex-wrap: nowrap;
+        gap: 5px;
+    }
+    footer{
+
+        padding: 20px 40px;
+    }
+    footer ul li a{
+        font-size: 14px;
+    }
+
+}
 
 /* ----------------INICIO---------------- */
 
@@ -227,6 +266,9 @@ footer div a{
 .none{
     display: none;
 }
+.aceptar-alert{
+    margin-right: 10px;
+}
 /* -----------------mediaqueries inicio--------------- */
 @media screen and (max-width: 1035px ) {
     .datos form{
@@ -236,6 +278,20 @@ footer div a{
         grid-column: 2/2;
         text-align: center;
     }
+    p{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 890px ) {
+    p{
+        font-size: 16px;
+    }
+    h2{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 20px;
+    }
 }
 @media screen and (max-width: 830px ) {
     .datos form{
@@ -244,15 +300,68 @@ footer div a{
     .datos form .enviar {
         grid-column: 1/1;
     }
-    h2{
-        font-family: "Roboto Flex", sans-serif;
-        font-size: 28px;
+    
+}
+@media screen and (max-width: 680px ){
+    .datos{
+        padding: 40px 60px 0px 60px;
+
+    }
+    .resultados{
+        padding: 30px 60px;
+    }
+}
+@media screen and (max-width: 500px ){
+    .datos{
+        padding: 40px 50px 40px 50px;
+
+    }
+    .resultados{
+        padding: 30px 50px;
+    }
+    .resultados .ventana-agregada{
+        padding: 60px 30px;
+    }
+    .resultados .ventana-agregada .caracteristicas-ventana-agregada{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        margin: 30px 0px;
+        flex-wrap: no-wrap;
+    }
+    .resultados .ventana-agregada .caracteristicas-ventana-agregada p{
+        font-size: 12px;
+        border-radius: 10px;
+        text-align: left;
+    
+    }
+    .datos form .campo-form label{
+        font-size: 14px;
     }
     p{
-        font-family: "Roboto Flex", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
         font-size: 18px;
     }
-    
+}
+
+@media screen and (max-width: 400px ){
+    .datos{
+        padding: 20px 40px 20px 40px;
+
+    }
+    .resultados{
+        padding: 20px 40px;
+    }
+    .resultados .ventana-agregada{
+        padding: 40px 20px;
+    }
 }
 
 
@@ -273,7 +382,17 @@ footer div a{
     font-weight: 600 ;
     font-style: normal;
 }
-
+/* --------------media de sobre el proyecto ------------ */
+@media screen and (max-width: 880px ){
+    .sobre-proyecto{
+        padding: 40px 60px;
+    }
+}
+@media screen and (max-width: 400px ){
+    .sobre-proyecto{
+        padding: 20px 40px;
+    }
+}
 /* ---------------------------lineas ---------------- */
 
 #linea-contenedor{
@@ -297,4 +416,23 @@ footer div a{
 }
 #linea-contenedor .descripcion-contenedor div p{
     margin-bottom: 40px;
+}
+
+/*-------------------media queries de lineas---------------- */
+@media screen and (max-width: 680px ){
+    #linea-contenedor{
+        padding: 40px 60px;
+    }
+    #linea-contenedor .descripcion-contenedor{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    #linea-contenedor .descripcion-contenedor img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 380px ){
+#linea-contenedor .descripcion-contenedor div a{
+    font-size: 14px;
+}
 }

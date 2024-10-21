@@ -13,11 +13,11 @@ fetch("../lineas.json")
         div.className="descripcion-contenedor";
         div.innerHTML = `
             <div>
-                <h2>${lineaCorrecta.titulo}</h2>
-                <p>${lineaCorrecta.descripcion}</p>
+                <h2>${lineaCorrecta?.titulo}</h2>
+                <p>${lineaCorrecta?.descripcion}</p>
                 <a href="../index.html"> Volver al Analizador </a>
             </div>
-            <img src="${lineaCorrecta.img}">
+            <img src="${lineaCorrecta?.img}">
         `;
         let div2= document.createElement("div");
         div2.className="volver";
