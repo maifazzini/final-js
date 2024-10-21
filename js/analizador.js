@@ -93,7 +93,6 @@ function asignarRueda(ventanas, linea, ruedas, pesoAluminioAlto, pesoAluminioAnc
 let ventanas = JSON.parse(localStorage.getItem("ventanas-calculadas")) || [];
 
 function datos() {
-
     Toastify({
         text: "Se agregó correctamente la ventana",
         className: "tostadita",
@@ -120,10 +119,6 @@ function datos() {
 }
 
 
-
-
-
-
 function calcular(ventanas) {
     vacio.classList.add("none");
     //modena
@@ -139,12 +134,12 @@ function calcular(ventanas) {
     asignarRueda(ventanas, "Jumbo", ruedasJumbo, pesoDelPVCJumbo, pesoDelPVCJumbo);
 }
 
-
+// mostrar ventanas hoy
 function mostrarVentanasHoy() {
     const fechaHoy = new Date().toLocaleDateString("es-AR");;
     const ventanasHoy = ventanas.filter((ventana) => ventana.fecha === fechaHoy);
 
-    contenedor.innerHTML = ""; // Limpiar el contenedor
+    contenedor.innerHTML = ""; 
     if (ventanasHoy.length > 0) {
         vacio.classList.add("none");
         calcular(ventanasHoy);
@@ -162,8 +157,7 @@ function cargarVentanasHoy() {
 // funcion para estar seguro de que no quiere ingresar obra
 function alertObra() {
     let valordeobra = obra.value ? true : false;
-    console.log(valordeobra)
-    for (valordeobra; valordeobra == false; valordeobra) {
+    if (valordeobra == false){
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success aceptar-alert",
@@ -183,7 +177,6 @@ function alertObra() {
         }
         ).then((result) => {
             if (result.isConfirmed) {
-                valordeobra = true;
                 swalWithBootstrapButtons.fire({
                     title: "Lo agregamos sin nombre de la obra",
                     icon: "success",
@@ -194,7 +187,6 @@ function alertObra() {
             } else if (
                 result.dismiss === Swal.DismissReason.cancel
             ) {
-                valordeobra = true;
                 swalWithBootstrapButtons.fire({
                     title: "Tranki, todavia lo podes agregar!",
                     color: "#035A7A",
@@ -202,7 +194,6 @@ function alertObra() {
                 });
             }
         });
-        valordeobra = true;
     }
 
 }
