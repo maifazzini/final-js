@@ -158,6 +158,7 @@ function cargarVentanasHoy() {
     ventanas = JSON.parse(localStorage.getItem("ventanas-calculadas")) || [];
     borrar.addEventListener("click", (e) => {
        ventanas= [];
+        localStorage.clear();
         mostrarVentanasHoy();
     })
     mostrarVentanasHoy();
