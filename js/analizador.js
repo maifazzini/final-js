@@ -151,10 +151,6 @@ function mostrarVentanasHoy() {
     }
 }
 
-// borrar historial
-borrar.addEventListener("click", (e) => {
-       ventanas= [];
-    })
 
 
 // Cargar ventanas de hoy al inicio
@@ -217,6 +213,11 @@ function validaciondeobras() {
         }
     })
 }
+// borrar historial
+borrar.addEventListener("click", (e) => {
+       ventanas= [];
+    })
+
 cargarVentanasHoy();
 validaciondeobras()
 
