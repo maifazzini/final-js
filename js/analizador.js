@@ -156,6 +156,11 @@ function mostrarVentanasHoy() {
 // Cargar ventanas de hoy al inicio
 function cargarVentanasHoy() {
     ventanas = JSON.parse(localStorage.getItem("ventanas-calculadas")) || [];
+    borrar.addEventListener("click", (e) => {
+    console.log(ventanas)
+       ventanas= [];
+    console.log(ventanas)
+    })
     mostrarVentanasHoy();
 }
 
@@ -218,9 +223,7 @@ cargarVentanasHoy();
 validaciondeobras();
 
 // borrar historial
-borrar.addEventListener("click", (e) => {
-       ventanas= [];
-    })
+
 
 
 
