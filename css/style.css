@@ -43,6 +43,7 @@ input[type="number" i] {
     margin-top: 40px;
     color: #fde5e8;
     text-align: center;
+    width: 100%;
 }
 /* ------------------HEADER-------------------- */
 
