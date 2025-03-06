@@ -22,7 +22,7 @@ const vacio = document.querySelector("#vacio");
 const inputs = document.querySelectorAll(".campos");
 const seccionDatos = document.querySelector("#datos");
 const textoError = document.querySelector("#error");
-
+const borrar = document.querySelector("#borrar");
 
 //! Clase Ruedas
 class Ruedas {
@@ -142,11 +142,19 @@ function mostrarVentanasHoy() {
     contenedor.innerHTML = ""; 
     if (ventanasHoy.length > 0) {
         vacio.classList.add("none");
+        borrar.classList.remove("none");
+        vacio.classList.add("boton");
         calcular(ventanasHoy);
     } else {
         vacio.classList.remove("none");
     }
 }
+
+// borrar historial
+borrar.addEventListener("click", (e) => {
+       calcular([]);
+    })
+
 
 // Cargar ventanas de hoy al inicio
 function cargarVentanasHoy() {
