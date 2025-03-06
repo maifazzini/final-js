@@ -35,7 +35,16 @@ input[type="number" i] {
     padding-block: 0px;
     padding-inline: 0px;
 }
-
+.boton{
+    background-color: #035A7A;
+    height: 40px;
+    border: 0px;
+    width: 70%;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #e5f7fd;
+    text-align: center;
+}
 /* ------------------HEADER-------------------- */
 
 .navbar{
