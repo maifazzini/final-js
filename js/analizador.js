@@ -153,8 +153,7 @@ function mostrarVentanasHoy() {
 
 // borrar historial
 borrar.addEventListener("click", (e) => {
-       calcular([]);
-    console.log("funciona");
+       ventanas= [];
     })
 
 
