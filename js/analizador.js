@@ -213,12 +213,14 @@ function validaciondeobras() {
         }
     })
 }
+
+cargarVentanasHoy();
+validaciondeobras();
+
 // borrar historial
 borrar.addEventListener("click", (e) => {
        ventanas= [];
     })
 
-cargarVentanasHoy();
-validaciondeobras()
 
 
