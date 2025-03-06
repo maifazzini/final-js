@@ -36,13 +36,13 @@ input[type="number" i] {
     padding-inline: 0px;
 }
 .boton{
-    background-color: #035A7A;
+    background-color: #7a0311;
     height: 40px;
     border: 0px;
     width: 70%;
     border-radius: 10px;
     margin-top: 40px;
-    color: #e5f7fd;
+    color: #fde5e8;
     text-align: center;
 }
 /* ------------------HEADER-------------------- */
