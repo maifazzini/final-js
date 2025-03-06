@@ -143,10 +143,11 @@ function mostrarVentanasHoy() {
     if (ventanasHoy.length > 0) {
         vacio.classList.add("none");
         borrar.classList.remove("none");
-        vacio.classList.add("boton");
+        borrar.classList.add("boton");
         calcular(ventanasHoy);
     } else {
         vacio.classList.remove("none");
+        borrar.classList.add("none");
     }
 }
 
